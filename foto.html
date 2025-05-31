@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halil Karakaya - Fotoğraflar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5072899732701311" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0YF8GTRYX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S0YF8GTRYX');
+    </script>
+    <style>
+        /* Resetting base button styles to avoid conflicts */
+        .blog-tab-button, .hamburger-menu {
+            all: unset;
+            box-sizing: border-box;
+        }
+
+        /* Masaüstü için ortalama ve hamburger menüyü gizleme */
+        @media screen and (min-width: 769px) {
+            .blog-tabs {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60px;
+                background: none;
+                box-shadow: none;
+                position: static;
+            }
+            .tab-buttons-group {
+                display: flex;
+                flex-direction: row;
+                margin: 0 auto;
+                justify-content: center;
+                gap: 24px;
+            }
+            .hamburger-menu {
+                display: none !important;
+            }
+            .blog-tab-button {
+                background: #fff;
+                color: #4a4a4a;
+                border: none;
+                border-radius: 999px;
+                font-size: 18px;
+                font-weight: 500;
+                min-width: 250px;
+                height: 54px;
+                padding: 0 32px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                letter-spacing: 1px;
+                transition: background 0.2s, color 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+            .blog-tab-button.active, .blog-tab-button:focus {
+                background: #e3f0ff;
+                color: #1976d2;
+            }
+            .w3-row-padding .w3-half img {
+                margin-bottom: 15px;
+                transition: transform 0.3s ease-in-out;
+            }
+            .w3-row-padding .w3-half img:hover {
+                transform: scale(1.03);
+            }
+        }
+        /* Mobil için hamburger menü ve sağa yaslama */
+        @media screen and (max-width: 768px) {
+            .blog-header {
+                display: none !important;
+            }
+            .blog-tabs {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                z-index: 2000;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0;
+                height: 60px;
+            }
+            .hamburger-menu {
+                min-width: 40px;
+                max-width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background: none;
+                font-size: 20px;
+                margin: 0 8px 0 0;
+                padding: 0;
+                cursor: pointer;
+            }
+            .tab-buttons-group {
+                display: flex;
+                flex: 1;
+                margin-left: 0;
+                gap: 12px;
+                justify-content: center;
+            }
+            .blog-tab-button {
+                flex: none;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background: #f8f9fa;
+                font-size: 16px;
+                font-weight: 600;
+                margin: 0;
+                min-width: 0;
+                padding: 10px 8px;
+                border-radius: 20px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                color: #222;
+                transition: background 0.2s, color 0.2s;
+                cursor: pointer;
+            }
+            .blog-tab-button.active, .blog-tab-button:focus {
+                background: #e3f0ff;
+                color: #1976d2;
+            }
+            .blog-container {
+                margin-top: 70px;
+            }
+            .w3-row-padding .w3-half img {
+                margin-bottom: 12px;
+                transition: transform 0.3s ease-in-out;
+            }
+            .w3-row-padding .w3-half img:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="w3-container">
+            <button class="hamburger-menu" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <h1>Halil Karakaya</h1>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <div class="blog-container">
+        <div class="row">
+            <!-- Sol Sidebar -->
+            <div class="col-md-3">
+                <div class="blog-sidebar" id="mobileSidebar">
+                    <a href="index.html">
+                        <i class="fa fa-home"></i> ANASAYFA
+                    </a>
+                    <a href="foto.html" class="active">
+                        <i class="fa fa-camera"></i> FOTOLAR
+                    </a>
+                    <a href="https://www.instagram.com/halilkrakaya?r=nametag" target="_blank">
+                        <i class="fa fa-instagram"></i> İNSTAGRAM
+                    </a>
+                    <a href="https://x.com/Halilkarakayax?s=09" target="_blank">
+                        <i class="fa fa-twitter"></i> TWİTTER
+                    </a>
+                    <a href="https://www.youtube.com/@halilblackrock5207" target="_blank">
+                        <i class="fa fa-youtube"></i> YOUTUBE
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank">
+                        <i class="fa fa-linkedin"></i> LİNKEDIN
+                    </a>
+                    <a href="https://github.com/halilkarkaya" target="_blank">
+                        <i class="fa fa-github"></i> GITHUB
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ana İçerik Alanı -->
+            <div class="col-md-9">
+                <!-- Tab Butonları -->
+                <div class="blog-tabs">
+                    <button class="hamburger-menu" onclick="toggleSidebar()">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="tab-buttons-group">
+                         <button class="blog-tab-button" onclick="openCity('Doga')">
+                            <i class="fa fa-camera"></i> Doğa
+                        </button>
+                        <button class="blog-tab-button" onclick="openCity('Kisisel')">
+                            <i class="fa fa-user"></i> Kişisel
+                        </button>
+                        <button class="blog-tab-button" onclick="openCity('Hayvanlar')">
+                            <i class="fa fa-paw"></i> Hayvanlar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Blog Postları (Content Sections) -->
+                <div id="Doga" class="blog-post city">
+                    <!-- Photo Grid -->
+                    <div class="w3-row-padding " style="margin-bottom:128px">
+                        <div class="w3-half">
+                            <img src="doğa\manzara10.jpg" style="width:100%">
+                            <img src="doğa\ay1.jpg" style="width:100%">
+                            <img src="doğa\manzara7.jpg" style="width:100%">
+                            <img src="doğa\manzara3.jpg" style="width:100%">
+                            <img src="doğa\manzara5.jpg" style="width:100%">
+                            <img src="doğa\manzara2.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="w3-half">
+                            <img src="doğa\WhatsApp Görsel 2025-05-31 saat 23.45.09_e32b9f83.jpg" style="width:100%">
+                            <img src="doğa\manzara6.jpg" style="width:100%">
+                            <img src="doğa\manzara4.jpg" style="width:100%">
+                            <img src="doğa\manzara9.jpg" style="width:100%">
+                            <img src="doğa\manzara8.jpg" style="width:100%">
+                            <img src="doğa\manzara1.jpg"style="width:100%">
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="Kisisel" class="blog-post city" style="display:none">
+                    <!-- Photo Grid from kisisel.html -->
+                    <div class="w3-row-padding" style="margin-bottom:128px">
+                        <div class="w3-half">
+                            <img src="kişisel/kisisel2.jpg" style="width:100%">
+                            <img src="kişisel/kisisel1.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="w3-half">
+                            <img src="kişisel/kisisel5.jpg" style="width:100%">
+                            <img src="kişisel/kisisel4.jpg" style="width:100%">
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="Hayvanlar" class="blog-post city" style="display:none">
+                    <!-- Photo Grid from hayvanlar.html -->
+                    <div class="w3-row-padding" style="margin-bottom:128px">
+                        <div class="w3-half">
+                            <img src="hayvanlar\kopek3.jpg" class="w3-hover-grayscale"style="width:100%">
+                            <img src="hayvanlar\kedi1.jpg" style="width:100%">
+                            <img src="hayvanlar\WhatsApp Görsel 2025-05-31 saat 23.45.09_8d5627af.jpg" style="width:100%">
+                            <img src="hayvanlar\kedi3.jpg" class="w3-hover-grayscale"style="width:100%">
+                            <img src="hayvanlar\kedi2.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="w3-half">
+                            <img src="hayvanlar\köpek2.jpg" class="w3-hover-grayscale"style="width:100%">
+                            <img src="hayvanlar\kopek5.jpg" class="w3-hover-grayscale" style="width:100%">
+                            <img src="hayvanlar\köpek1.jpg" style="width:100%">
+                            <img src="hayvanlar\WhatsApp Görsel 2025-05-31 saat 23.45.08_75af2ebe.jpg" style="width:100%">
+                            <img src="hayvanlar\kopek4.jpg" class="w3-hover-grayscale" style="width:100%">
+                           
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Reklam -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5072899732701311" crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5072899732701311" data-ad-slot="6018590381" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <p>&copy; 2024 Halil'in Web Sitesi. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sayfa yüklendiğinde ilk tab'ı aç
+        window.onload = function() {
+            openCity('Doga');
+        }
+
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+
+             // Remove 'active' class from all buttons
+            var buttons = document.getElementsByClassName("blog-tab-button");
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // Add 'active' class to the clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // Hamburger menü için toggle fonksiyonu
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mobileSidebar");
+            sidebar.classList.toggle("active");
+        }
+
+        // Scroll olayını dinle ve navbar'ı güncelle (Only for mobile)
+        window.addEventListener('scroll', function() {
+            var tabs = document.querySelector('.blog-tabs');
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 0) {
+                    tabs.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+                } else {
+                    tabs.style.boxShadow = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

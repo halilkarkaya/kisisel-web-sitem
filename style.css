@@ -1,0 +1,394 @@
+/* Genel Stiller */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+    line-height: 1.8;
+}
+
+/* Header Stili */
+.blog-header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.blog-header h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Blog Container */
+.blog-container {
+    max-width: 1300px;
+    margin: 100px auto 0;
+    padding: 30px;
+}
+
+/* Blog Post Kartı */
+.blog-post {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Blog Post Görseli */
+.blog-post-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-post:hover .blog-post-image {
+    transform: scale(1.02);
+}
+
+/* Blog Post İçeriği */
+.blog-post-content {
+    padding: 35px;
+}
+
+.blog-post-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.blog-post-text {
+    color: #546e7a;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* Tab Menü */
+.blog-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.blog-tab-button {
+    background: #ffffff;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.blog-tab-button:hover {
+    background: #3498db;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Sidebar */
+.blog-sidebar {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 100px;
+}
+
+.blog-sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.blog-sidebar a:hover {
+    background: #f8f9fa;
+    color: #3498db;
+    transform: translateX(5px);
+}
+
+.blog-sidebar i {
+    margin-right: 12px;
+    width: 20px;
+    color: #3498db;
+}
+
+/* Footer */
+.blog-footer {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.blog-footer p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 20px;
+        margin-top: 80px;
+    }
+    
+    .blog-post-image {
+        height: 300px;
+    }
+    
+    .blog-post-title {
+        font-size: 1.6rem;
+    }
+    
+    .blog-post-content {
+        padding: 25px;
+    }
+    
+    .blog-tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px 25px;
+    }
+    
+    .blog-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.blog-post {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Özel Stil Sınıfları */
+.fancy-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: 2px solid #3498db;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.fancy-link:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.basic-button {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: none;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.basic-button:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Python Uzmanlığı Bölümü için Özel Stiller */
+.python-expertise {
+    background: linear-gradient(135deg, #2b5b84 0%, #1a365d 100%);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.python-expertise strong {
+    color: #4ade80;
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.python-expertise ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.python-expertise li {
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.python-expertise li:before {
+    content: "🐍";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.python-expertise li:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.python-badge {
+    display: inline-block;
+    background: #4ade80;
+    color: #1a365d;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.python-badges {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* banner fontu için*/
+.w3-tangerine {
+  font-family: 'Tangerine', serif;
+}
+
+.ortala {
+  text-align: center;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    padding: 10px;
+}
+
+.hamburger-menu:focus {
+    outline: none;
+}
+
+.blog-header {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .blog-sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100vh;
+        width: 250px;
+        background: white;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        padding-top: 80px;
+    }
+
+    .blog-sidebar.active {
+        left: 0;
+    }
+
+    .col-md-3 {
+        position: static;
+    }
+
+    .blog-container {
+        padding-top: 20px;
+    }
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.close-sidebar:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
